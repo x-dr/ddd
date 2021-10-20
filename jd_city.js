@@ -27,8 +27,9 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let inviteCodes = [
-  'RtGKzuX1RF-qeYaSRNxlgHbOhWz1sbJtLoja1W3GFZf4tRgk_w',
-  'RtGKzb-lRAuqeouYRYJi0z380P26aqf19AMDRVUijd43Z7_QWw'
+'RtGKzuX1RF-qeYaSRNxlgHbOhWz1sbJtLoja1W3GFZf4tRgk_w',
+'yQVaHGQIFlXvMs-aW5h_j0u5lqLx-BNYfAWLHR0',
+'RtGKzb-lRAuqeouYRYJi0z380P26aqf19AMDRVUijd43Z7_QWw'
 ]
 $.shareCodesArr = [];
 
@@ -318,7 +319,7 @@ function city_lotteryAward() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://jd.smiekaaa.tk/city`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: ``, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
