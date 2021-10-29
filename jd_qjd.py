@@ -21,7 +21,7 @@ new Env('全民抢京豆 10.29-11.12');
 # exit(0)
 #ck 优先读取【JDCookies.txt】 文件内的ck  再到 ENV的 变量 JD_COOKIE='ck1&ck2' 最后才到脚本内 cookies=ck
 cookies=''
-qjd_zlzh=['Your JD_User', '买买买']
+qjd_zlzh = ['jd_5c1519482bfa5', 'jd_69a5e9758c8ff', '%E5%B0%8F%E4%B8%9Cgo', 'jd_4e46f6a553ef5', 'jd_790f598b36ab9', 'wdfofKHkXQZMzH', 'jd_6d3c80f3c086b', 'jd_dObTlgdwzyNy', 'jd_70b84dc46ccc3'  ]
 #是否开启通知，ture：发送通知，false：不发送 。如关闭通知：export qjd_isNotice="false"
 qjd_isNotice="true"
 
@@ -31,7 +31,7 @@ qjd_isNotice="true"
 # UA 可自定义你的，默认随机
 UserAgent = ''
 # 限制速度 （秒）
-sleepNum = 0.1
+sleepNum = 2
 
 import os, re, sys
 import random, string
