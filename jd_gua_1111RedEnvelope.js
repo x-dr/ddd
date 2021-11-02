@@ -1,15 +1,21 @@
 /*
-双十一无门槛红包🧧
+双十一无门槛红包
+cron 0 0,12,18 * * *  https://raw.githubusercontent.com/smiek2121/scripts/master/gua_redEnvelopes.js
+整点跑 红包几率大点
 ck1助力 作者
 其余助力ck1
-https://u.jd.com/3LUawTS
+https://u.jd.com/yd1RdPM
 跳转到app 可查看助力情况
-1 0,12,18 * * * gua_1111RedEnvelope.js
+11.11京享紅包
+最高6666元红包！
+https://u.jd.com/yd1RdPM
+返利变量：gua_redEnvelope_rebateCode，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCode
+例：gua_redEnvelope_rebateCode="你的返利code"
 */
 
 let rebateCodes = ''
 
-const $ = new Env('双十一无门槛红包🧧');
+const $ = new Env('双十一无门槛红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const Faker = $.isNode() ? require('./sign_graphics_validate.js') : '';
@@ -45,6 +51,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     if ($.isNode()) await notify.sendNotify($.name + '活动已结束', `请删除此脚本\n咱江湖再见`);
     return
   }
+  console.log('整点跑 红包几率大点\n0点 12点')
   $.shareCode = 'zZDrk'
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -57,9 +64,9 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     }
   }
   if(message){
-    $.msg($.name, ``, `${message}\nhttps://u.jd.com/3LUawTS\n\n跳转到app 可查看助力情况`);
+    $.msg($.name, ``, `${message}\nhttps://u.jd.com/yd1RdPM\n\n跳转到app 可查看助力情况`);
     if ($.isNode()){
-      await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/3LUawTS\n跳转到app 可查看助力情况`);
+      await notify.sendNotify(`${$.name}`, `${message}\n\nhttps://u.jd.com/yd1RdPM\n跳转到app 可查看助力情况`);
     }
   }
 })()
@@ -123,7 +130,7 @@ function getCoupons(shareId = '',type = 1) {
       headers: {
         "Accept-Language": "zh-cn",
         "Accept-Encoding": "gzip, deflate, br",
-        'Cookie': `${cookie} ${newCookie}`,
+        'Cookie': `${newCookie} ${cookie}`,
         "User-Agent": $.UA ,
       }
     }
@@ -188,7 +195,7 @@ function shareUnionCoupon() {
       headers: {
         "Accept-Language": "zh-cn",
         "Accept-Encoding": "gzip, deflate, br",
-        'Cookie': `${cookie} ${newCookie}`,
+        'Cookie': `${newCookie} ${cookie}`,
         "User-Agent": $.UA ,
       }
     }
@@ -226,7 +233,7 @@ function getUrl1() {
       url: $.url1,
       followRedirect:false,
       headers: {
-        'Cookie': `${cookie} ${newCookie}`,
+        'Cookie': `${newCookie} ${cookie}`,
         "User-Agent": $.UA
       }
     }
@@ -251,7 +258,7 @@ function getUrl() {
       url: `https://u.jd.com/${rebateCode}?s=${$.shareCode}`,
       followRedirect:false,
       headers: {
-        'Cookie': `${cookie} ${newCookie}`,
+        'Cookie': `${newCookie} ${cookie}`,
         "User-Agent": $.UA
       }
     }
@@ -317,11 +324,11 @@ function getEid(arr) {
 
 function getUA(){
   $.UA = `jdapp;iPhone;10.2.0;13.1.2;${randomString(40)};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460611;appBuild/167853;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`
-  rebateCode = '3LUawTS'
+  rebateCode = 'yd1RdPM'
   if($.index != 1){
-    let arr = [rebateCodes,'3LUawTS']
+    let arr = [rebateCodes,'yd1RdPM']
     rebateCode = arr[Math.floor(Math.random() * arr.length)] || rebateCode
-    if(!rebateCode) rebateCode = '3LUawTS'
+    if(!rebateCode) rebateCode = 'yd1RdPM'
   }
   console.log(rebateCode)
 }
