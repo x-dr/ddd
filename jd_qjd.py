@@ -31,7 +31,7 @@ qjd_isNotice="true"
 # UA 可自定义你的，默认随机
 UserAgent = ''
 # 限制速度 （秒）
-sleepNum = 2
+sleepNum = 0.1
 
 import os, re, sys
 import random, string
