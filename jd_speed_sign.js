@@ -87,7 +87,7 @@ async function jdGlobal() {
     $.score = 0
     $.total = 0
     // await taskList()
-    // await queryJoy()
+    await queryJoy()
     // await signInit()
     await cash()
     await showMsg()
