@@ -1,10 +1,10 @@
 /*
 暖暖红包
-cron 0 1 * * * gua_redEnvelope.js
+cron:0 0,12,18 * * * gua_redEnvelope.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
-https://u.jd.com/nLmoVvf
+https://u.jd.com/vdM3IUZ
 */
 let rebateCodes = 'vdM3IUZ' // 返利code
 
