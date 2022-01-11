@@ -11,7 +11,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const appid = $.appid = "50089"
 $.curlCmd = ""
 const h = (new Date()).getHours()
-const helpFlag = h >= 9 && h < 12
+const helpFlag = h >= 9 && h < 19
 const puzzleFlag = h >= 13 && h < 18
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
