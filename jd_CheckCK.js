@@ -11,7 +11,8 @@ const {
 	getEnvs,
 	DisableCk,
 	EnableCk,
-	getstatus
+	getstatus,
+	updateEnv
 } = require('./ql');
 const api = got.extend({
 	retry: {
@@ -182,6 +183,11 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 						await isLoginByX1a0He();
 					} else {
 						console.log(`成功获取到别名: ${$.nickName},Pass!\n`);
+						// if(envs[i].remarks === null || envs[i].remarks ===""){
+						await updateEnv(envs[i].value,envs[i]._id,$.nickName)
+						console.log(`成功更新别名: ${$.nickName},Pass!\n`);
+						// }
+						
 					}
 				}
 			}
