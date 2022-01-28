@@ -12,7 +12,8 @@ const {
 	getEnvById,
     DisableCk,
     EnableCk,
-    getstatus
+    getstatus,
+	updateEnv
 } = require('./ql');
 const api = got.extend({
         retry: {
