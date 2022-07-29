@@ -6,7 +6,7 @@
 活动时间：长期
 活动入口：京东极速版app-现金签到
 已支持IOS双京东账号,Node.js支持N个京东账号
-脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js  13
+脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #京东极速版
@@ -86,7 +86,7 @@ async function jdGlobal() {
     await invite2()
     $.score = 0
     $.total = 0
-    // await taskList()
+    await taskList()
     await queryJoy()
     // await signInit()
     await cash()
@@ -666,28 +666,21 @@ function taskGetUrl(function_id, body) {
 }
 
 function invite2() {
-  let t = +new Date()
   let inviterIdArr = [
-    "5V7vHE23qh2EkdBHXRFDuA==",
-    "Yvk/fMWJC/6lvcx1iUFnsw==",
-    "E9EvSFNuA1pahSQT0uSsXkW1v0j+QOHQbk8+peJYc0I=",
-    "4AVQao+eH8Q8kvmXnWmkG8ef/fNr5fdejnD9+9Ugbec=",
-    "jbGBRBPo5DmwB9ntTCSVOGXuh1YQyccCuZpWwb3PlIc=",
-    "w22w0sZEccp/OWxg1d20RtsryQGfghc94PsLIBqeX0E=",
-    "BksRv0UXx/XluHFWxo8yaQ=="
+    "DrqDJlxWWoRAn+R+y9gR2tb9OUkw2M74IS5uAK37Pxg"
   ]
   let inviterId = inviterIdArr[Math.floor((Math.random() * inviterIdArr.length))]
   let options = {
     url: "https://api.m.jd.com/",
-    body: `functionId=TaskInviteService&body=${JSON.stringify({"method":"participateInviteTask","data":{"channel":"1","encryptionInviterPin":encodeURIComponent(inviterId),"type":1}})}&appid=market-task-h5&uuid=&_t=${t}`,
+    body: `functionId=TaskInviteService&body=${JSON.stringify({"method":"participateInviteTask","data":{"channel":"1","encryptionInviterPin":encodeURIComponent(inviterId),"type":1}})}&appid=market-task-h5&uuid=&_t=${Date.now()}`,
     headers: {
       "Host": "api.m.jd.com",
       "Accept": "application/json, text/plain, */*",
       "Content-Type": "application/x-www-form-urlencoded",
-      "Origin": "https://gray.jd.com",
+      "Origin": "https://assignment.jd.com",
       "Accept-Language": "zh-CN,zh-Hans;q=0.9",
       "User-Agent": $.isNode() ? (process.env.JS_USER_AGENT ? process.env.JS_USER_AGENT : (require('./JS_USER_AGENTS').USER_AGENT)) : ($.getdata('JSUA') ? $.getdata('JSUA') : "'jdltapp;iPad;3.1.0;14.4;network/wifi;Mozilla/5.0 (iPad; CPU OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
-      "Referer": "https://gray.jd.com/",
+      "Referer": "https://assignment.jd.com/",
       "Accept-Encoding": "gzip, deflate, br",
       "Cookie": cookie
     }
@@ -700,13 +693,8 @@ function invite2() {
 function invite() {
   let t = +new Date()
   let inviterIdArr = [
-    "5V7vHE23qh2EkdBHXRFDuA==",
-    "Yvk/fMWJC/6lvcx1iUFnsw==",
-    "E9EvSFNuA1pahSQT0uSsXkW1v0j+QOHQbk8+peJYc0I=",
-    "4AVQao+eH8Q8kvmXnWmkG8ef/fNr5fdejnD9+9Ugbec=",
-    "jbGBRBPo5DmwB9ntTCSVOGXuh1YQyccCuZpWwb3PlIc=",
-    "w22w0sZEccp/OWxg1d20RtsryQGfghc94PsLIBqeX0E=",
-    "BksRv0UXx/XluHFWxo8yaQ=="
+    // DrqDJlxWWoRAn+R+y9gR2tb9OUkw2M74IS5uAK37Pxg
+    "DrqDJlxWWoRAn+R+y9gR2tb9OUkw2M74IS5uAK37Pxg"
   ]
   let inviterId = inviterIdArr[Math.floor((Math.random() * inviterIdArr.length))]
   let options = {
