@@ -206,8 +206,8 @@ if ($.isNode() && process.env.CHECKCK_ALLNOTIFY) {
                         await isLoginByX1a0He();
                     } else {
                         console.log(`成功获取到别名: ${$.nickName},Pass!\n`);
-			await updateEnv(envs[i].value,envs[i]._id,$.nickName)
-			console.log(`成功更新别名: ${$.nickName},Pass!\n`);
+			// await updateEnv(envs[i].value,envs[i]._id,`remark=${$.nickName};`)
+			// console.log(`成功更新别名: ${$.nickName},Pass!\n`);
                     }
                 }
             }
